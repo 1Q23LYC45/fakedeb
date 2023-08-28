@@ -1,0 +1,5 @@
+Package: fakeutils
+Version: 999.999.999-9999
+Architecture: all
+Description: Fake Some Depends
+Maintainer: fakename

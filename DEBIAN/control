@@ -1,0 +1,5 @@
+Package: fakedeb
+Version: 1.0
+Architecture: all
+Description: Fake Some Depends
+Maintainer: null

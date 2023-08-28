@@ -1,0 +1,12 @@
+#!/bin/sh
+echo FakeDeb 1.0 - Create an empty deb package
+echo Creating $1 .deb,please wait...
+mkdir ~/.fakedeb
+cp -r /var/fakeutils/* ~/.fakedeb/
+sed -i "s/fakeutils/$1/g" ~/.fakedeb/DEBIAN/control
+chmod 0755 ~/.fakedeb/DEBIAN
+dpkg-deb --root-owner-group --build ~/.fakedeb/
+sync
+rm -rf ~/.fakedeb
+mv ~/.fakedeb.deb ./$1.deb
+echo Creation completed.Use 'sudo dpkg -i $1.deb' to install it.
